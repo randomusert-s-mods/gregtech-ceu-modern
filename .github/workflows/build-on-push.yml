@@ -27,6 +27,10 @@ jobs:
               - 'gradle.properties'
               - 'gradlew*'
               - 'gradle/**'
+
+      - name: no access error fix
+        run: chmod +x gradlew
+
       - name: Setup Build
         if: steps.filter.outputs.code == 'true'
         uses: ./.github/actions/build_setup
